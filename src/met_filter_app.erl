@@ -21,8 +21,8 @@ stop(_State) ->
     ok.
 
 start_pop_and_http() ->
-    PopPort   = application:get_env(met_filter, pop_port,   9558),
-    QueryPort = application:get_env(met_filter, query_port, 9559),
+    PopPort   = application:get_env(met_filter, pop_port,   9564),
+    QueryPort = application:get_env(met_filter, query_port, 9565),
     Seeds     = application:get_env(met_filter, pop_seeds,  []),
     Vec = em_filter_vec:from_capabilities(base_capabilities()),
     catch em_pop_sup:stop_node(met_filter),
