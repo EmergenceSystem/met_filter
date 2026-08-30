@@ -1,0 +1,25 @@
+{application, met_filter, [
+    {description, "em_filter agent for Metropolitan Museum of Art open-access images"},
+    {vsn, "0.1.0"},
+    {registered, [met_filter_sup, met_filter_server]},
+    {mod, {met_filter_app, []}},
+    {applications, [
+        kernel,
+        stdlib,
+        ssl,
+        inets,
+        cowboy,
+        em_filter
+    ]},
+    {env, [
+        {pop_port,   0},
+        {query_port, 0},
+        {pop_seeds,  []}
+    ]},
+    {modules, [
+        met_filter_sup,
+        met_filter_server
+    ]},
+    {licenses, ["Apache-2.0"]},
+    {links, [{"GitHub", "https://github.com/EmergenceSystem/met_filter"}]}
+]}.
